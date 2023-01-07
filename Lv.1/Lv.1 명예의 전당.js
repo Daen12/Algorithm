@@ -6,8 +6,10 @@
 function solution(k, score) {
     const answer = [];
     for (let i = 1; i <= score.length; i++) {
-        const compare = score.slice(0, i);
-        const highestK = compare.sort((a, b) => b - a).slice(0, k);
+        const highestK = score
+            .slice(0, i)
+            .sort((a, b) => b - a)
+            .slice(0, k);
         answer.push(Math.min(...highestK));
     }
     return answer;
